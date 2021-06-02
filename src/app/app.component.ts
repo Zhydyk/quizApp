@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angualr-quiz-app';
+  constructor(private db: AngularFirestore) {
+    const things = db.collection('quiz').valueChanges();
+    things.subscribe(console.log);
+  }
 }
