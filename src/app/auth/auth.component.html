@@ -1,0 +1,15 @@
+<div class="auth-wrapper">
+  <form class="auth-container" [formGroup]="authGroup">
+    <div>
+      <label>Enter user name:</label>
+      <input formControlName="userName" type="email" placeholder="Enter your name">
+    </div>
+    <div>
+      <label>Enter password:</label>
+      <input formControlName="password" type="password" placeholder="Enter your password">
+    </div>
+    {{authGroup.status}}
+    <button type="submit" (click)="onSignIn()">Login</button>
+    <button type="submit" (click)="onSignUp()">Register</button>
+  </form>
+</div>

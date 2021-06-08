@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,4 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private db: AngularFirestore) {
-    const things = db.collection('quiz').valueChanges();
-    things.subscribe(console.log);
-  }
 }
