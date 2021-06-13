@@ -16,6 +16,7 @@ import {environment} from '../environment';
 //Modules from app
 import {AuthModule} from "./auth/auth.module";
 import {QuizModule} from "./quiz/quiz.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {QuizModule} from "./quiz/quiz.module";
     AngularFireAuthModule,
     AuthModule,
     QuizModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

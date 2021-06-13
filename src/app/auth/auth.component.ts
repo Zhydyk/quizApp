@@ -49,7 +49,7 @@ export class AuthComponent implements OnInit {
       userName: [
         '',
         {
-          validators: [Validators.required]
+          validators: [Validators.required, Validators.email]
         }
       ],
       password: [
@@ -59,6 +59,13 @@ export class AuthComponent implements OnInit {
         }
       ]
     })
+  }
+
+  public getErrorMessage(): string {
+    if (this.authGroup.value.userName.hasError('requires')) {
+      return 'You must enter a value'
+    }
+    return this.authGroup.value.userName.hasError('userName') ? 'Not a valid email' : '';
   }
 
 }

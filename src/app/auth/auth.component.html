@@ -1,15 +1,45 @@
 <div class="auth-wrapper">
   <form class="auth-container" [formGroup]="authGroup">
-    <div>
-      <label>Enter user name:</label>
-      <input formControlName="userName" type="email" placeholder="Enter your name">
+    <div class="example-container">
+      <mat-form-field class="form-login">
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="test@example.com"
+          formControlName="userName"
+          required
+        />
+      </mat-form-field>
     </div>
     <div>
-      <label>Enter password:</label>
-      <input formControlName="password" type="password" placeholder="Enter your password">
+      <mat-form-field class="form-login">
+        <mat-label>Enter your email</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Enter your password"
+          formControlName="password"
+          required
+        />
+      </mat-form-field>
     </div>
-    {{authGroup.status}}
-    <button type="submit" (click)="onSignIn()">Login</button>
-    <button type="submit" (click)="onSignUp()">Register</button>
+    <div>
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit"
+        (click)="onSignIn()"
+      >
+        Login
+      </button>
+      <button
+        mat-stroked-button
+        color="accent"
+        type="submit"
+        (click)="onSignUp()"
+      >
+        Register
+      </button>
+    </div>
   </form>
 </div>
