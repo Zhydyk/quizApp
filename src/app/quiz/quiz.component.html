@@ -1,4 +1,30 @@
-<p>quiz works!</p>
-<div>
-  <button (click)="onSignOut()">Sign Out</button>
+<div class="quiz-wrapper">
+  <div class="quiz-sign-out">
+    <button mat-button color="primary" (click)="onSignOut()">Sign Out</button>
+  </div>
+  <div class="quiz-container">
+    <h1>Quizzler</h1>
+    <p>List of Quizz</p>
+    <div class="quiz-list">
+      <ul>
+        <li *ngFor="let value of quiz">
+          {{value.id}}
+          <mat-icon
+            aria-hidden="true"
+            aria-label="edit icon"
+            [routerLink]="['/edit', value.id]"
+            >edit</mat-icon
+          >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="delete icon"
+            >delete</mat-icon
+          >
+        </li>
+      </ul>
+    </div>
+    <button mat-stroked-button color="primary" routerLink="/edit">
+      Create New Quiz
+    </button>
+  </div>
 </div>

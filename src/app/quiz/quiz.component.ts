@@ -4,17 +4,26 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.scss']
+  styleUrls: ['./quiz.component.scss'],
 })
 export class QuizComponent implements OnInit {
+  public quiz = [
+    {
+      id: 12,
+    },
+    {
+      id: 13,
+    },
+    {
+      id: 14,
+    },
+  ];
 
-  constructor(public authServise: AuthService) { }
+  constructor(public authServise: AuthService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public onSignOut() {
     this.authServise.signOut();
   }
-
 }

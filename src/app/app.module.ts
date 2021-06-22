@@ -17,10 +17,12 @@ import {environment} from '../environment';
 import {AuthModule} from "./auth/auth.module";
 import {QuizModule} from "./quiz/quiz.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewQuizModule } from './new-quiz/new-quiz.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthModule,
     QuizModule,
     BrowserAnimationsModule,
+    NewQuizModule
   ],
   providers: [],
   bootstrap: [AppComponent]
